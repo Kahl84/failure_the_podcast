@@ -7,7 +7,7 @@ import { Mail } from "lucide-react";
 
 export function NewsletterStandalone() {
   return (
-    <section className="py-4 md:py-6 bg-muted/50">
+    <section className="relative py-12 md:py-16 bg-[#18181b] border-t border-b border-failure-red/20 shadow-2xl">
       <div className="container max-w-6xl px-2 md:px-12">
         <div className="grid gap-4 md:grid-cols-2 items-center">
           <div className="space-y-4">
@@ -110,6 +110,7 @@ export function NewsletterStandalone() {
           </div>
         </div>
       </div>
+      <div className="pointer-events-none absolute inset-0 z-0 opacity-10 bg-gradient-to-b from-failure-red/10 to-transparent" />
     </section>
   );
 }
