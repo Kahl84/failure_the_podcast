@@ -1,10 +1,15 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Headphones, Play } from "lucide-react"
 import { Logo } from "@/components/logo"
 import { SpotifyEmbed } from "@/components/spotify-embed"
+import { useEpisodes } from "@/hooks/use-episodes"
 
 export function HeroSection() {
+  const { latestEpisode, podcastInfo } = useEpisodes();
+
   return (
     <section className="relative py-12 md:py-24 lg:py-32 overflow-hidden">
       <div className="container px-4 md:px-6">
@@ -15,13 +20,13 @@ export function HeroSection() {
                 <Logo className="text-5xl md:text-6xl" />
               </div>
               <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                A podcast about entrepreneurship with a focus on people that failed and came back from these failures.
+                {podcastInfo.description}
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
               <Button asChild className="bg-failure-red hover:bg-failure-red/90">
                 <a
-                  href="https://open.spotify.com/show/2ipOq1FlpGaiWiiQPz5QNc"
+                  href={podcastInfo.spotify.showUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -67,7 +72,7 @@ export function HeroSection() {
                   </svg>
                 </a>
                 <a
-                  href="https://open.spotify.com/show/2ipOq1FlpGaiWiiQPz5QNc"
+                  href={podcastInfo.spotify.showUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -83,12 +88,14 @@ export function HeroSection() {
             </div>
           </div>
           <div className="relative h-[350px] md:h-[450px] lg:h-[500px] rounded-xl overflow-hidden bg-muted">
-            <SpotifyEmbed
-              src="https://open.spotify.com/embed/episode/3XF7Bm8WALdEHzbVjUb6fW/video?utm_source=generator"
-              height="100%"
-              width="100%"
-              allowFullScreen={true}
-            />
+            {latestEpisode?.spotify.audioEmbedUrl && (
+              <SpotifyEmbed
+                src={latestEpisode.spotify.audioEmbedUrl}
+                height="100%"
+                width="100%"
+                allowFullScreen={false}
+              />
+            )}
           </div>
         </div>
       </div>

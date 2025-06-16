@@ -1,0 +1,40 @@
+{
+  "episodes": [
+    {
+      "id": 1,
+      "title": "First Episode - Introduction",
+      "description": "Welcome to our first episode where we introduce the concept of the Failure podcast and why we're focusing on entrepreneurial failures.",
+      "date": "June 16, 2025",
+      "hosts": ["Kahl", "Paolo"],
+      "duration": "45 min",
+      "spotify": {
+        "episodeUrl": "https://open.spotify.com/episode/65L6FOzSuLGgWeiS7jucaf",
+        "audioEmbedUrl": "https://open.spotify.com/embed/episode/65L6FOzSuLGgWeiS7jucaf?utm_source=generator",
+        "videoEmbedUrl": "https://open.spotify.com/embed/episode/65L6FOzSuLGgWeiS7jucaf/video?utm_source=generator"
+      },
+      "status": "published"
+    },
+    {
+      "id": 2,
+      "title": "Episode 2 - Coming Soon",
+      "description": "Stay tuned for our next episode where we'll dive deeper into entrepreneurial challenges and recovery strategies.",
+      "date": "Coming Soon",
+      "hosts": ["Kahl", "Paolo"],
+      "duration": null,
+      "spotify": {
+        "episodeUrl": null,
+        "audioEmbedUrl": null,
+        "videoEmbedUrl": null
+      },
+      "status": "coming_soon"
+    }
+  ],
+  "podcast": {
+    "name": "Failure",
+    "description": "A podcast about entrepreneurship with a focus on people that failed and came back from these failures.",
+    "hosts": ["Kahl", "Paolo"],
+    "spotify": {
+      "showUrl": "https://open.spotify.com/show/2ipOq1FlpGaiWiiQPz5QNc"
+    }
+  }
+}
